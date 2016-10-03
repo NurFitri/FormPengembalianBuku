@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,12 +18,14 @@ public class MainActivity extends AppCompatActivity {
     //    RadioButton rbRPL1, rbRPL2, rbRPL3, rbRPL4, rbRPL5;
     RadioGroup rgKelas;
     CheckBox cbNovel, cbKomik, cbEnsiklopedia;
+    Spinner spJumlah;
     Button bSubmit;
     TextView tvHasilNo;
     TextView tvHasilNama;
     TextView tvHasilTgl;
     TextView tvHasilKelas;
     TextView tvHasilJenis;
+    TextView tvHasilJumlah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +44,14 @@ public class MainActivity extends AppCompatActivity {
         cbNovel = (CheckBox) findViewById(R.id.checkBoxNovel);
         cbKomik = (CheckBox) findViewById(R.id.checkBoxKomik);
         cbEnsiklopedia = (CheckBox) findViewById(R.id.checkBoxEnsiklopedia);
+        spJumlah = (Spinner) findViewById(R.id.spinnerJumlah);
         bSubmit = (Button) findViewById(R.id.buttonSubmit);
         tvHasilNo = (TextView) findViewById(R.id.textViewHasilNo);
         tvHasilNama = (TextView) findViewById(R.id.textViewHasilNama);
         tvHasilTgl = (TextView) findViewById(R.id.textViewHasilTgl);
         tvHasilKelas = (TextView) findViewById(R.id.textViewHasilKelas);
         tvHasilJenis = (TextView) findViewById(R.id.textViewHasilJenis);
+        tvHasilJumlah = (TextView) findViewById(R.id.textViewHasilJumlah);
 
         bSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         if (hasil.length() == startlen) hasil += "Tidak ada pada pilihan";
 
         tvHasilJenis.setText(hasil);
+
+        tvHasilJumlah.setText("Jumlah Pinjam " + spJumlah.getSelectedItem().toString());
     }
 
     private boolean isValid() {

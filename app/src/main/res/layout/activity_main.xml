@@ -142,9 +142,10 @@
             android:text="Jumlah Pinjam" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spinnerJumlah"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/jumlah" />
 
         <Button
             android:id="@+id/buttonSubmit"
@@ -196,10 +197,12 @@
             tools:text="HasilJenis" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textViewHasilJumlah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text" />
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            tools:text="HasilJumlah " />
 
     </LinearLayout>
 </ScrollView>
